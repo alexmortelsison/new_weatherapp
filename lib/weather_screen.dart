@@ -13,15 +13,23 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-  Future getCurrentWeather() async {
-    String cityName = 'London';
-    final res = await http.get(
-      Uri.parse(
-        'https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey',
-      ),
-    );
+  @override
+  void initState() {
+    getCurrentWeather();
+    super.initState();
+  }
 
-    print(res.body);
+  Future getCurrentWeather() async {
+    try {
+      String cityName = 'London';
+      final res = await http.get(
+        Uri.parse(
+          'https://api.openweathermap.org/data/2.5/forecast?q=$cityName&appid=$apiKey',
+        ),
+      );
+    } catch (e) {
+      throw e.toString();
+    }
   }
 
   @override
