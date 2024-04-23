@@ -6,6 +6,8 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
+import 'hourly_forecast_item.dart';
+
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
 
@@ -89,190 +91,53 @@ class WeatherScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SingleChildScrollView(
+            const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
                   SizedBox(
-                    child: Card(
-                      elevation: 6,
-                      child: Container(
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        padding: const EdgeInsets.all(8.0),
-                        child: const Column(
-                          children: [
-                            Text(
-                              '07:32',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                            SizedBox(height: 8),
-                            SizedBox(
-                              height: 32,
-                              width: 32,
-                              child: Image(
-                                image: AssetImage('images/final_sunny.gif'),
-                              ),
-                            ),
-                            SizedBox(height: 8),
-                            Text(
-                              '25°C',
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    child: HourlyForecastItem(),
                   ),
-                  Card(
-                    elevation: 6,
-                    child: Container(
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Column(
-                        children: [
-                          Text(
-                            '07:32',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                          SizedBox(height: 8),
-                          SizedBox(
-                            height: 32,
-                            width: 32,
-                            child: Image(
-                              image: AssetImage('images/final_sunny.gif'),
-                            ),
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            '25°C',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 6,
-                    child: Container(
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Column(
-                        children: [
-                          Text(
-                            '07:32',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                          SizedBox(height: 8),
-                          SizedBox(
-                            height: 32,
-                            width: 32,
-                            child: Image(
-                              image: AssetImage('images/final_sunny.gif'),
-                            ),
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            '25°C',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 6,
-                    child: Container(
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Column(
-                        children: [
-                          Text(
-                            '07:32',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                          SizedBox(height: 8),
-                          SizedBox(
-                            height: 32,
-                            width: 32,
-                            child: Image(
-                              image: AssetImage('images/final_sunny.gif'),
-                            ),
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            '25°C',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 6,
-                    child: Container(
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Column(
-                        children: [
-                          Text(
-                            '07:32',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                          SizedBox(height: 8),
-                          SizedBox(
-                            height: 32,
-                            width: 32,
-                            child: Image(
-                              image: AssetImage('images/final_sunny.gif'),
-                            ),
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            '25°C',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  HourlyForecastItem(),
+                  HourlyForecastItem(),
+                  HourlyForecastItem(),
+                  HourlyForecastItem(),
                 ],
               ),
             ),
-            const SizedBox(height: 20),
-            const Placeholder(
-              fallbackHeight: 150,
-            ),
+            const SizedBox(height: 16),
             const SizedBox(
               height: 20,
             ),
-            const Placeholder(
-              fallbackHeight: 150,
+            const Text(
+              'Weather Information',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
+            const SizedBox(height: 16),
+            const Row(
+              children: [
+                Column(
+                  children: [
+                    Icon(
+                      Icons.water_drop,
+                    ),
+                    SizedBox(height: 8),
+                    Text('Humidity'),
+                    SizedBox(height: 8),
+                    Text(
+                      '94',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            )
           ],
         ),
       ),
