@@ -1,5 +1,7 @@
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'additional_info_item.dart';
 import 'hourly_forecast_item.dart';
 
@@ -92,12 +94,42 @@ class WeatherScreen extends StatelessWidget {
               child: Row(
                 children: [
                   SizedBox(
-                    child: HourlyForecastItem(),
+                    child: HourlyForecastItem(
+                      time: '00:00',
+                      temperature: '25°C',
+                      image: AssetImage(
+                        'images/cloudy.gif',
+                      ),
+                    ),
                   ),
-                  HourlyForecastItem(),
-                  HourlyForecastItem(),
-                  HourlyForecastItem(),
-                  HourlyForecastItem(),
+                  HourlyForecastItem(
+                    time: '00:00',
+                    temperature: '25°C',
+                    image: AssetImage(
+                      'images/final_sunny.gif',
+                    ),
+                  ),
+                  HourlyForecastItem(
+                    time: '00:00',
+                    temperature: '25°C',
+                    image: AssetImage(
+                      'images/thunderstorm.gif',
+                    ),
+                  ),
+                  HourlyForecastItem(
+                    time: '00:00',
+                    temperature: '25°C',
+                    image: AssetImage(
+                      'images/rainy.gif',
+                    ),
+                  ),
+                  HourlyForecastItem(
+                    time: '00:00',
+                    temperature: '25°C',
+                    image: AssetImage(
+                      'images/cloudy.gif',
+                    ),
+                  ),
                 ],
               ),
             ),
