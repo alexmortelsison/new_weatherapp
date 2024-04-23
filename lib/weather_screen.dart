@@ -1,11 +1,6 @@
 import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-
+import 'additional_info_item.dart';
 import 'hourly_forecast_item.dart';
 
 class WeatherScreen extends StatelessWidget {
@@ -91,6 +86,7 @@ class WeatherScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            const SizedBox(height: 8),
             const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -116,25 +112,24 @@ class WeatherScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 8),
             const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Column(
-                  children: [
-                    Icon(
-                      Icons.water_drop,
-                    ),
-                    SizedBox(height: 8),
-                    Text('Humidity'),
-                    SizedBox(height: 8),
-                    Text(
-                      '94',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+                AdditionalInfoItem(
+                  icon: Icons.water_drop,
+                  label: 'Humidity',
+                  value: '94',
+                ),
+                AdditionalInfoItem(
+                  icon: Icons.air,
+                  label: 'Wind Speed',
+                  value: '7.67',
+                ),
+                AdditionalInfoItem(
+                  icon: Icons.beach_access,
+                  label: 'Pressure',
+                  value: '1006',
                 ),
               ],
             )
